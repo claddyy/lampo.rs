@@ -69,7 +69,7 @@
 
         devShell = pkgs.mkShell {
           nativeBuildInputs = with pkgs; [ pkg-config ];
-          buildInputs = with pkgs; [ gnumake rustc cargo rustfmt openssl openssl.dev ] ++ cln-env-shell;
+          buildInputs = with pkgs; [ gnumake rustc cargo rustfmt openssl openssl.dev python3 poetry ] ++ cln-env-shell;
           shellHook = ''
             export HOST_CC=gcc
             export RUST_BACKTRACE=1

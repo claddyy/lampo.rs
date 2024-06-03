@@ -23,3 +23,6 @@ install:
 
 integration: default
 	$(CC) test -p tests $(ARGS)
+
+proto:
+	cd tests/lnprototest; poetry install; poetry run make check

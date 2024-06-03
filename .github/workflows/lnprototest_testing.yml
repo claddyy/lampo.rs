@@ -12,10 +12,6 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: lnprototest testing
-        env:
-          PROTO_TEST: 1
-        run: |
-          docker build -f docker/Dockerfile -t lampo-ci-ubuntu .
-          docker run -e PROTO_TEST=1 lampo-ci-ubuntu
+      - uses: actions/checkout@v3
+      - uses: cachix/install-nix-action@v22
+      - run: nix develop --command bash -c 'make proto'
