@@ -73,6 +73,7 @@
           shellHook = ''
             export HOST_CC=gcc
             export RUST_BACKTRACE=1
+            export LD_LIBRARY_PATH=${pkgs.openssl.dev}/lib:$LD_LIBRARY_PATHexport LD_LIBRARY_PATH=${pkgs.openssl.dev}/lib:$LD_LIBRARY_PATH
           '';
         };
       }
